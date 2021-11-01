@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+
+   @font-face {
+    font-family: balboa;
+    font-weight: 400;
+    src: url(/fonts/balboa-Medium.woff) format("woff");
+  }
+
+  @font-face {
+    font-family: degular;
+    font-weight: 400;
+    src: url(/fonts/degular-regular.woff) format("woff");
+  }
+
+}
