@@ -1,5 +1,5 @@
 <style>
-  
+
   .sidebar{
   position: fixed;
   top: 0;
@@ -77,8 +77,8 @@ ul li a:hover{
 
 <div class="sidebar z-30 block 2xl:hidden">
   <ul class="grid gap-y-8 justify-center items-center">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#">Gallery</a></li>
-    <li><a href="#">Contacts</a></li>
+    <li><a href="/#home">Home</a></li>
+    <li><a href="/#gallery">Gallery</a></li>
+    <li><a href="/#contacts">Contacts</a></li>
   </ul>
 </div>

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>GodKiller</title>
+	<title>Godkiller</title>
+
+    <link rel="preload" as="image" href="/assets/image/leviathan/1.jpg">
+    <link rel="preload" as="image" href="/assets/image/akkord/1.jpg">
+    <link rel="preload" as="image" href="/assets/image/demon/1.jpg">
+    <link rel="preload" as="image" href="/assets/image/fallenangel/1.jpg">
 </head>
 
 <style>
 
 		body{
-			 
+
   			 overflow-x: hidden;
 
   			  /* Hide horizontal scrollbar */
@@ -23,82 +28,130 @@
   		-ms-overflow-style: none;  /* IE and Edge */
   		scrollbar-width: none;  /* Firefox */
 		}
-	
+
+		section.other a:hover{
+
+			font-weight: 800;
+
+		}
+
+		#image-hover{
+
+			background-image: linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url('/assets/image/longexile/1.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
+		}
+
+        .link{
+            display: inline-block
+        }
+
+
 
 </style>
 
 @include('app')
 @include('nav')
-<body class="font-degular">
+<body class="font-degular bg-black">
 <div class="z-40">
 @include('sidebar')
+@include('fullscreen')
+
 </div>
 
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/1.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/2.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/3.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/4.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/5.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/6.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/7.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/8.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/9.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/10.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/11.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/12.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/13.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/14.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/15.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/16.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover grid grid-cols-2">
-		<img src="/assets/image/godkiller/17.jpg">
-		<img src="/assets/image/godkiller/18.jpg">
-	</section>
-	<section class="h-full w-screen bg-cover">
-		<img src="/assets/image/godkiller/19.jpg">
-	</section>
-	<section class="h-screen w-screen grid grid-cols-2 bg-cover">
+	<section>
+	<div class="px-4 xl:px-32 mt-32 grid gap-y-9">
+		<div class="flex justify-between items-center">
+			<p class="text-4xl font-light text-white">GODKILLER</p>
+			<div class="flex gap-2 items-center">
+				<button><img src="/assets/button/all-net.svg" id="all-btn" class="w-4"></button><span class="text-white text-lg">|</span><button><img id="grid-btn" src="/assets/button/gallery.svg" class="btn-gallery w-4 fill-current"></button>
+			</div>
+		</div>
 		<div>
-		<img src="/assets/image/godkiller/20.jpg" class="h-full">
+			@include('gallery-godkiller')
 		</div>
-		<div class="grid h-full">
-		<img src="/assets/image/godkiller/21.jpg" class="h-full">
-		<img src="/assets/image/godkiller/30.jpg" class="h-full">	
-		</div>
+	</div>
 	</section>
 
+	<section class="other w-screen px-4 xl:px-32 my-20">
+
+		<div class="grid grid-cols-3">
+
+			<div class="col-span-3 xl:col-span-1 grid gap-3">
+				<p class="text-white font-extralight">Other <br> Projects</p>
+				<div class="grid text-white text-4xl">
+				<a onmouseover="changeImage()" data-image-id='longexile' href="/long-exile" class="link">LONG EXILE</a>
+				<a onmouseover="changeImage()" data-image-id='leviathan' href="/leviathan" class="link">LEVIATHAN</a>
+				<a onmouseover="changeImage()" data-image-id='akkord' href="/akkord" class="link">AKKORD</a>
+				<a onmouseover="changeImage()" data-image-id='demon' href="" class="link">DAEMON</a>
+				<a onmouseover="changeImage()" data-image-id='fallenangel' href="/fallen-angel" class="link">FALLEN ANGEL</a>
+				</div>
+			</div>
+			<div id="image-hover" class="col-span-3 h-52 xl:h-full xl:col-span-2 bg-blend-hard-light bg-yellow-500 "></div>
+		</div>
+
+	</section>
+
+	<section id="test2" class="h-32 3xl:h-52 bg-white w-full 2xl:w-screen">
+
+	<div class="px-10 3xl:px-32 grid gap-y-4 2xl:flex justify-start 2xl:justify-between pt-4 2xl:pt-6 3xl:pt-8 4xl:pt-14">
+		<div>
+			<p class="lg:text-sm 2xl:text-sm 3xl:text-base 4xl:text-3xl font-bold">Contact</p>
+			<div class="flex gap-3">
+				<a href="" class="underline lg:text-xs 2xl:text-sm 5xl:text-xl">info@stray-studios.com</a>
+				<i class="fas fa-long-arrow-alt-right 3xl:text-base 5xl:text-2xl pt-1"></i>
+			</div>
+		</div>
+		<div class="">
+			<p class="text-gray-400 lg:text-xs 2xl:text-sm 3xl:text-sm 4xl:text-xl">&copy; 2021 Hivemind Studios, Ltd.</p>
+		</div>
+	</div>
+
+	</section>
+
+	<script>
+        var isGrid = true
+
+
+        function changeImage(){
+            document.getElementById('image-hover').style.backgroundImage = `linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url('/assets/image/${event.target.dataset.imageId}/1.jpg')`
+        }
+
+        document.getElementById("all-btn").addEventListener('click', function() {
+            if(!isGrid)return
+            document.getElementById("all-btn").src = "/assets/button/all.svg"
+            document.getElementById("grid-btn").src = "/assets/button/gallery-net.svg"
+            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-3')
+            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-1')
+
+
+            document.querySelectorAll(".thumbnail").forEach(element => {
+                element.classList.remove('4xl:h-80')
+                element.classList.add('4xl:h-96')
+            });
+            isGrid = false
+        });
+        document.getElementById("grid-btn").addEventListener('click', function() {
+            if(isGrid)return
+            document.getElementById("all-btn").src = "/assets/button/all-net.svg"
+            document.getElementById("grid-btn").src = "/assets/button/gallery.svg"
+            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-1')
+            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-3')
+
+
+            document.querySelectorAll(".thumbnail").forEach(element => {
+                element.classList.add('4xl:h-80')
+                element.classList.remove('4xl:h-96')
+
+            });
+
+            isGrid = true
+        });
+
+
+	</script>
 
 </body>
 </html>
