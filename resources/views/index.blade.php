@@ -7,7 +7,7 @@
 
 	<style>
 		body{
-			 
+
   			 overflow-x: hidden;
 
   			  /* Hide horizontal scrollbar */
@@ -18,9 +18,9 @@
   		display: none;
 		}
 
-		 Hide scrollbar for IE, Edge and Firefox 
+		 Hide scrollbar for IE, Edge and Firefox
 		body {
-  		-ms-overflow-style: none;   IE and Edge 
+  		-ms-overflow-style: none;   IE and Edge
   		scrollbar-width: none;
 		}
 		 section{
@@ -49,7 +49,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
-			
+
 		}
 
 		#showimage2{
@@ -58,7 +58,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
-			
+
 		}
 
 		#showimage3{
@@ -67,7 +67,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			object-position: top;
-			
+
 		}
 
 		#showimage4{
@@ -76,7 +76,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
-			
+
 		}
 
 		#showimage5{
@@ -85,7 +85,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
-			
+
 		}
 
 		#showimage6{
@@ -94,7 +94,7 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center;
-			
+
 		}
 
 		button.connet{
@@ -170,9 +170,9 @@ h1.view:hover:after {
     transform: scaleX(1);
 }
 
-	
 
-		
+
+
 
 	</style>
 </head>
@@ -183,7 +183,7 @@ h1.view:hover:after {
 @include('sidebar')
 </div>
 	<div class="row">
-	<section id="home" class="h-screen w-screen bg-cover grid items-center" >	
+	<section id="home" class="h-screen w-screen bg-cover grid items-center" >
 	<div class="grid gap-y-9 2xl:hidden justify-center px-0">
 	</div>
 	<div class="grid pt-8 px-4  text-white w-screen">
@@ -194,7 +194,7 @@ h1.view:hover:after {
 	</section>
 
 	<section class="mt-10 3xl:mt-0 px-10 3xl:px-20 h-full 2xl:h-screen w-screen grid gap-5 2xl:gap-0 grid-cols-1 2xl:grid-cols-3 text-white items-center">
-		
+
 		<div class="col-span-2">
 			<div class="grid gap-3">
 				<p class="font-base 4xl:text-2xl 5xl:text-5xl">About Stray</p>
@@ -202,7 +202,7 @@ h1.view:hover:after {
 			</div>
 		</div>
 		<div class="flex justify-between 2xl:grid gap-y-9 justify-center">
-			<div class="grid gap-y-0 2xl:gap-y-5 4xl:gap-y-7 5xl:gap-y-8 mb-10 mt-0 4xl:mb-48 5xl:mb-80 5xl:pb-5">	
+			<div class="grid gap-y-0 2xl:gap-y-5 4xl:gap-y-7 5xl:gap-y-8 mb-10 mt-0 4xl:mb-48 5xl:mb-80 5xl:pb-5">
 				<p class="font-medium text-base 4xl:text-2xl 5xl:text-5xl">Services</p>
 				<p class="text-sm 4xl:text-base 5xl:text-3xl">
 				<a href="">World building</a> <br>
@@ -225,34 +225,34 @@ h1.view:hover:after {
 
 					<button class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left text-white font-light  text-xs 2xl:text-base 4xl:text-2xl"></i></button>
 					<a href="/godkiller" class="mySlides fade grid justify-items-center items-center rounded-xl h-60 2xl:h-64 3xl:h-96 4xl:h-100 5xl:h-103 w-10/12 bg-blend-overlay hover:bg-blue-800  hover:cursor-pointer hover:text-opacity-100" id="showimage">
-					<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out ">GODKILLER</span>	
+					<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out ">GODKILLER</span>
 					</a>
 
 					<a href="/fantasy-stuff" class="mySlides fade grid justify-items-center items-center rounded-xl h-60 2xl:h-64 3xl:h-96 4xl:h-100 5xl:h-103 w-10/12 bg-blend-overlay hover:bg-blue-800  hover:cursor-pointer hover:text-opacity-100" id="showimage2">
-					<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">DAEMON</span>	
+					<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">DAEMON</span>
 					</a>
 
-						<a href="/fallen-angel" class="mySlides fade grid justify-items-center items-center rounded-xl h-60 2xl:h-64 3xl:h-96 4xl:h-100 5xl:h-103 w-10/12 
-						object-top 
+						<a href="/fallen-angel" class="mySlides fade grid justify-items-center items-center rounded-xl h-60 2xl:h-64 3xl:h-96 4xl:h-100 5xl:h-103 w-10/12
+						object-top
 						bg-blend-overlay
 					    hover:bg-blue-800  hover:cursor-pointer hover:text-opacity-100" id="showimage3">
-						<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">FALLEN ANGEL</span>	
+						<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">FALLEN ANGEL</span>
 						</a>
 
 							<a href="/long-exile" class="mySlides fade grid justify-items-center items-center rounded-xl h-60 2xl:h-64 3xl:h-96 4xl:h-100 5xl:h-103 w-10/12 bg-blend-overlay hover:bg-blue-800  hover:cursor-pointer hover:text-opacity-100" id="showimage4">
-							<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">LONG EXILE</span>	
+							<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">LONG EXILE</span>
 							</a>
 
 								<a href="/akkord" class="mySlides fade grid justify-items-center items-center rounded-xl h-60 2xl:h-64 3xl:h-96 4xl:h-100 5xl:h-103 w-10/12 bg-blend-overlay hover:bg-blue-800  hover:cursor-pointer hover:text-opacity-100" id="showimage5">
-								<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">AKKORD</span>	
-								</a>				
+								<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">AKKORD</span>
+								</a>
 
 								<a href="/leviathan" class="mySlides fade grid justify-items-center items-center rounded-xl h-60 2xl:h-64 3xl:h-96 4xl:h-100 5xl:h-103 w-10/12 bg-blend-overlay hover:bg-blue-800  hover:cursor-pointer hover:text-opacity-100" id="showimage6">
-								<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">LEVIATHAN</span>	
+								<span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl  text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">LEVIATHAN</span>
 								</a>
 
 					<button class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right text-white text-xs 2xl:text-base 4xl:text-2xl"></i></button>
-					
+
 			</div>
 
 			<div class="gallery hidden px-10 3xl:px-20" id="gallery">
@@ -262,14 +262,14 @@ h1.view:hover:after {
 
 
 			<div class="grid justify-center my-6 2xl:my-0">
-							<h1 class="view w-24 4xl:w-40 5xl:w-64 text-xs 2xl:text-sm 3xl:text-base 4xl:text-xl 5xl:text-4xl pb-2 text-white text-center hover:rounded-full" id="showandhide" onclick="slideshow()">View All</h1>	
+							<h1 class="view w-24 4xl:w-40 5xl:w-64 text-xs 2xl:text-sm 3xl:text-base 4xl:text-xl 5xl:text-4xl pb-2 text-white text-center hover:rounded-full" id="showandhide" onclick="slideshow()">View All</h1>
 
 		</div>
-		
+
 	</section>
 
 	<section id="contacts" class="h-full 2xl:h-screen w-screen grid items-center px-10 2xl:px-20 3xl:px-24 pt-20">
-		
+
 		<div class="grid grid-cols-1 2xl:grid-cols-2 items-center">
 			<div class="flex gap-8 mb-20">
 
@@ -277,7 +277,7 @@ h1.view:hover:after {
 					<div class="z-0 animate-ping bg-yellow-600 w-6 h-6 4xl:w-10 4xl:h-10 5xl:w-14 5xl:h-14 5xl:w-16 5xl:h-16  rounded-full grid justify-center items-center">
 						<div class="z-0 bg-yellow-500 w-2 h-2 2xl:w-3 2xl:h-3 4xl:w-5 4xl:h-5 4xl:h-5 5xl:w-7 5xl:h-7 rounded-full"></div>
 					</div>
-					
+
 				</div>
 				<div class="">
 					<p class="text-4xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl 5xl:text-8xl font-medium text-white">BRIDGE <br> YOUR VISION</p>
@@ -298,9 +298,9 @@ h1.view:hover:after {
 					<textarea class="bg-gray-900 text-white px-6 pt-4 rounded-xl h-32 2xl:h-44 3xl:h-52 4xl:h-80 mt-6 text-xs 2xl:text-xs 3xl:text-sm 4xl:text-xl 5xl:text-4xl" placeholder="Your messege here"></textarea>
 
 					<div class="grid justify-end items-center">
-				<button class="connect border-2 text-white rounded-lg w-full px-4 font-light mt-4 text-sm  2xl:text-sm 3xl:text-sm 4xl:text-lg 5xl:text-2xl 5xl:h-12" type="submit">Connect with us</button>		
+				<button class="connect border-2 text-white rounded-lg w-full px-4 font-light mt-4 text-sm  2xl:text-sm 3xl:text-sm 4xl:text-lg 5xl:text-2xl 5xl:h-12" type="submit">Connect with us</button>
 					</div>
-				
+
 				</form>
 			</div>
 		</div>
@@ -325,13 +325,13 @@ h1.view:hover:after {
 
 
 				<div class="text-white text-3xl 2xl:text-3xl 3xl:text-4xl 4xl:text-6xl 5xl:text-8xl font-medium grid gap-2">
-			<p>LEARN, WITNESS, AND </p> <p>ENVISION CREATIVE</p> <p class="bg-white text-black w-full">DISCOVERIES.</p>		
+			<p>LEARN, WITNESS, AND </p> <p>ENVISION CREATIVE</p> <p class="bg-white text-black w-full">DISCOVERIES.</p>
 				</div>
-			
+
 			</div>
 
 		<div class="px-4 2xl:px-10 3xl:px-40 grid gap-4 justify-start 2xl:flex 2xl:justify-between 2xl:gap-0 mb-2 items-center">
-				
+
 				<div class="text-white font-light text-center 2xl:text-left text-xs 2xl:text-sm 3xl:text-base 4xl:text-lg 5xl:text-3xl w-full">
 					<p>Our artists have <br> previously worked with : </p>
 				</div>
@@ -344,7 +344,7 @@ h1.view:hover:after {
 	</section>
 
 	<section id="test2" class="h-32 3xl:h-52 bg-white w-full 2xl:w-screen">
-	
+
 	<div class="px-10 3xl:px-40 grid gap-y-4 2xl:flex justify-start 2xl:justify-between pt-4 2xl:pt-6 3xl:pt-8 4xl:pt-14">
 		<div>
 			<p class="lg:text-sm 2xl:text-sm 3xl:text-base 4xl:text-3xl font-bold">Contact</p>
@@ -362,7 +362,7 @@ h1.view:hover:after {
 
 </div>
 	<script>
-		
+
 		$('.view').on('click', function() {
 		$('.gallery').fadeToggle(300);
 	});
