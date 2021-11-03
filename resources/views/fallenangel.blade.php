@@ -82,11 +82,11 @@
 			<div class="col-span-3 xl:col-span-1 grid gap-3">
 				<p class="text-white font-extralight">Other <br> Projects</p>
 				<div class="grid text-white text-4xl">
-				<a onmouseover="changeImage()" data-image-id='longexile' href="/long-exile" class="link">LONG EXILE</a>
-				<a onmouseover="changeImage()" data-image-id='leviathan' href="/leviathan" class="link">LEVIATHAN</a>
-				<a onmouseover="changeImage()" data-image-id='akkord' href="/akkord" class="link">AKKORD</a>
-				<a onmouseover="changeImage()" data-image-id='godkiller' href="/godkiller" class="link">GODKILLER</a>
-				<a onmouseover="changeImage()" data-image-id='demon' href="/fantasy-stuff" class="link">DAEMON</a>
+				<a onmouseover="changeImage()" data-image-id='longexile' href="/long-exile" class="link magic-hover">LONG EXILE</a>
+				<a onmouseover="changeImage()" data-image-id='leviathan' href="/leviathan" class="link magic-hover">LEVIATHAN</a>
+				<a onmouseover="changeImage()" data-image-id='akkord' href="/akkord" class="link magic-hover">AKKORD</a>
+				<a onmouseover="changeImage()" data-image-id='godkiller' href="/godkiller" class="link magic-hover">GODKILLER</a>
+				<a onmouseover="changeImage()" data-image-id='demon' href="/fantasy-stuff" class="link magic-hover">DAEMON</a>
 				</div>
 			</div>
 			<div id="image-hover" class="col-span-3 h-52 xl:h-full xl:col-span-2 bg-blend-hard-light bg-yellow-500 "></div>
@@ -123,27 +123,34 @@
             if(!isGrid)return
             document.getElementById("all-btn").src = "/assets/button/all.svg"
             document.getElementById("grid-btn").src = "/assets/button/gallery-net.svg"
-            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-3')
-            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-1')
+            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-3','grid-cols-2')
+            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-1','grid-cols-1')
 
+
+            document.querySelectorAll(".all-img").forEach(element => element.style.display = 'block')
+            document.querySelectorAll(".view").forEach(element => element.style.display = 'none')
 
             document.querySelectorAll(".thumbnail").forEach(element => {
-                element.classList.remove('4xl:h-80')
-                element.classList.add('4xl:h-96')
+                element.classList.remove('h-52','4xl:h-96')
+                element.classList.add('h-auto')
             });
+
             isGrid = false
         });
         document.getElementById("grid-btn").addEventListener('click', function() {
             if(isGrid)return
             document.getElementById("all-btn").src = "/assets/button/all-net.svg"
             document.getElementById("grid-btn").src = "/assets/button/gallery.svg"
-            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-1')
-            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-3')
+            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-1','grid-cols-1')
+            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-3','grid-cols-2')
 
+            document.querySelectorAll(".all-img").forEach(element => element.style.display = 'none')
+
+            document.querySelectorAll(".view").forEach(element => element.style.display = 'block')
 
             document.querySelectorAll(".thumbnail").forEach(element => {
-                element.classList.add('4xl:h-80')
-                element.classList.remove('4xl:h-96')
+                element.classList.add('h-52','4xl:h-96')
+                element.classList.remove('h-auto')
 
             });
 

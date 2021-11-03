@@ -5,8 +5,11 @@
 
 	<style>
 
-		html{
+        *{
+            cursor: none;
 
+        }
+		html{
 			scroll-behavior: smooth;
 			scroll-snap-type: y mandatory;
 		}
@@ -22,9 +25,20 @@
 
 
 		nav li {
-
+            position: relative;
 			list-style: none;
 		}
+
+        .active::after{
+            position: absolute;
+            content: '';
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: #f5930B;
+        }
 
 	</style>
 </head>
@@ -37,14 +51,17 @@
 		</div>
 		<div id="menu" class="hidden 2xl:flex gap-20 justify-center items-center">
 
-			<li class="home active">
-				<a href="/#home" class="text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
+			<li class="home active magic-hover">
+				<a href="/#home" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
 			</li>
-			<li class="gallery">
-				<a href="/#gallery" class="text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
+			<li class="about magic-hover">
+				<a href="/#about" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">About</a>
 			</li>
-			<li class="contacts">
-					<a href="/#contacts" class="4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
+			<li class="gallery magic-hover">
+				<a href="/#gallery" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
+			</li>
+			<li class="contacts magic-hover">
+					<a href="/#contacts" class="magic-hover 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
 			</li>
 
 
@@ -61,16 +78,16 @@
             </button>
         </nav>
 
-        <div class="down">
-        	<a href="#gallery"><img src="/assets/button/down.svg" class="hidden 3xl:block w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
+        <div class="down magic-hover">
+        	<a href="#gallery" id="down"><img src="/assets/button/down.svg" class="hidden 3xl:block w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
         </div>
 
 
 
 	</nav>
 
-	  <div class="down-hp w-screen fixed bottom-10">
-        	<a href="#portofolio" class="grid justify-center"><img src="/assets/button/down.svg" class="block 3xl:hidden w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
+	  <div class="down-hp w-screen fixed bottom-10 z-50">
+        	<a href="#gallery" id="down-hp" class="grid justify-center"><img src="/assets/button/down.svg" class="block 3xl:hidden w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
         </div>
 
 	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -78,11 +95,34 @@
 	<script>
 
 		window.addEventListener('scroll', function (){
-
 			let nav = document.querySelector('nav');
 			let windowPosition = window.scrollY > 0;
 			nav.classList.toggle("scrolling-active", windowPosition);
+
+            if(windowPosition){
+                document.querySelector('.down').style.transform = 'rotate(180deg)'
+                document.querySelector('.down-hp').style.transform = 'rotate(180deg)'
+            }
+            else {
+                document.querySelector('.down').style.transform = 'rotate(0deg)'
+                document.querySelector('.down-hp').style.transform = 'rotate(0deg)'
+            }
+
 		})
+
+        document.querySelector('#down').addEventListener('click',function(){
+            if(window.scrollY > 0){
+                event.preventDefault()
+                window.scrollTo(0,0)
+            }
+        })
+        document.querySelector('#down-hp').addEventListener('click',function (){
+            if(window.scrollY > 0){
+                event.preventDefault()
+                window.scrollTo(0,0)
+            }
+        })
+
 
 	</script>
 
@@ -96,29 +136,29 @@
 
 	<script>
 
-	const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll("#menu li");
-window.onscroll = () => {
-  var current = "";
+    const navLi = document.querySelectorAll("#menu li");
+    var current = "";
+    window.onscroll = () => {
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 80) {
-      current = section.getAttribute("id"); }
-  });
+        document.querySelectorAll("section").forEach(section => {
+            var sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 80) {
+                current = section.getAttribute("id");
+            }
+        });
 
-  navLi.forEach((li) => {
-    li.classList.remove("active");
-    if (li.classList.contains(current)) {
-      li.classList.add("active");
-    }
-  });
-};
+        navLi.forEach((li) => {
+            li.classList.remove("active");
+            if (li.classList.contains(current)) {
+                li.classList.add("active");
+            }
+            // else{
+
+            // }
+        });
+    };
 
 
-    document.body.addEventListener('scroll',function(){
-        alert('a')
-    })
 	</script>
 
 </body>
