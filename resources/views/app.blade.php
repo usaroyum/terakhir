@@ -14,9 +14,21 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+   <link rel="stylesheet" href="/magic-mouse.css" />
+   <script type="text/javascript" src="/magic_mouse.js"></script>
+
   </head>
 
   	<script>
+          options = {
+            "cursorOuter": "disable",
+            "hoverEffect": "pointer-overlay",
+            "hoverItemMove": false,
+            "defaultCursor": false,
+            "outerWidth": 30,
+            "outerHeight": 30
+            };
+            magicMouse(options);
 
 		 $('#hamburger').click(function(){
    $('.sidebar').toggleClass('active');

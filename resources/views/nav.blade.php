@@ -5,8 +5,11 @@
 
 	<style>
 
-		html{
+        *{
+            cursor: none;
 
+        }
+		html{
 			scroll-behavior: smooth;
 			scroll-snap-type: y mandatory;
 		}
@@ -48,14 +51,17 @@
 		</div>
 		<div id="menu" class="hidden 2xl:flex gap-20 justify-center items-center">
 
-			<li class="home active">
-				<a href="/#home" class="text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
+			<li class="home active magic-hover">
+				<a href="/#home" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
 			</li>
-			<li class="gallery">
-				<a href="/#gallery" class="text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
+			<li class="about magic-hover">
+				<a href="/#about" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">About</a>
 			</li>
-			<li class="contacts">
-					<a href="/#contacts" class="4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
+			<li class="gallery magic-hover">
+				<a href="/#gallery" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
+			</li>
+			<li class="contacts magic-hover">
+					<a href="/#contacts" class="magic-hover 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
 			</li>
 
 
@@ -72,7 +78,7 @@
             </button>
         </nav>
 
-        <div class="down">
+        <div class="down magic-hover">
         	<a href="#gallery" id="down"><img src="/assets/button/down.svg" class="hidden 3xl:block w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
         </div>
 
