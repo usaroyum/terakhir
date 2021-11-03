@@ -4,6 +4,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="preload" as="images" href="/assets/button/all.svg">
+    <link rel="preload" as="images" href="/assets/button/all-net.svg">
+    <link rel="preload" as="images" href="/assets/button/gallery.svg">
+    <link rel="preload" as="images" href="/assets/button/gallery-net.svg">
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

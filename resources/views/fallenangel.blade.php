@@ -123,27 +123,34 @@
             if(!isGrid)return
             document.getElementById("all-btn").src = "/assets/button/all.svg"
             document.getElementById("grid-btn").src = "/assets/button/gallery-net.svg"
-            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-3')
-            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-1')
+            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-3','grid-cols-2')
+            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-1','grid-cols-1')
 
+
+            document.querySelectorAll(".all-img").forEach(element => element.style.display = 'block')
+            document.querySelectorAll(".view").forEach(element => element.style.display = 'none')
 
             document.querySelectorAll(".thumbnail").forEach(element => {
-                element.classList.remove('4xl:h-80')
-                element.classList.add('4xl:h-96')
+                element.classList.remove('h-52','4xl:h-96')
+                element.classList.add('h-auto')
             });
+
             isGrid = false
         });
         document.getElementById("grid-btn").addEventListener('click', function() {
             if(isGrid)return
             document.getElementById("all-btn").src = "/assets/button/all-net.svg"
             document.getElementById("grid-btn").src = "/assets/button/gallery.svg"
-            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-1')
-            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-3')
+            document.getElementById("galleryContainer").classList.remove('3xl:grid-cols-1','grid-cols-1')
+            document.getElementById("galleryContainer").classList.add('3xl:grid-cols-3','grid-cols-2')
 
+            document.querySelectorAll(".all-img").forEach(element => element.style.display = 'none')
+
+            document.querySelectorAll(".view").forEach(element => element.style.display = 'block')
 
             document.querySelectorAll(".thumbnail").forEach(element => {
-                element.classList.add('4xl:h-80')
-                element.classList.remove('4xl:h-96')
+                element.classList.add('h-52','4xl:h-96')
+                element.classList.remove('h-auto')
 
             });
 
