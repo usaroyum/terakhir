@@ -36,7 +36,7 @@
         @for ($i = 1; $i <= 14; $i++)
 
 		<div class="thumbnail h-52 4xl:h-96 w-full bg-blend-overlay hover:bg-blue-800  hover:cursor-pointer hover:text-opacity-100" style="background-image: linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),url('/assets/image/demon/{{$i}}.jpg');" id="thumbnail">
-            <a href="" onclick="previewImage('/assets/image/demon/{{$i}}.jpg')" class="view magic-hover"><span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl 5xl:text-6xl text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">View</span></a>
+            <a href="" onclick="previewImage('/assets/image/demon/{{$i}}.jpg')"  class="view cursorHover  "><span class="grid justify-center items-center text-white font-bold 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl 5xl:text-6xl text-opacity-0 w-full h-full hover:text-opacity-100 hover:transition duration-500 ease-in-out">View</span></a>
             <img src="/assets/image/demon/{{$i}}.jpg" class="all-img">
 		</div>
         @endfor

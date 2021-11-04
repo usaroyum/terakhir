@@ -5,10 +5,6 @@
 
 	<style>
 
-        *{
-            cursor: none;
-
-        }
 		html{
 			scroll-behavior: smooth;
 			scroll-snap-type: y mandatory;
@@ -35,15 +31,50 @@
             bottom: -2px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
+            width: 120%;
             height: 2px;
             background: #f5930B;
         }
+
+        *{
+            cursor: none;
+        }
+        @media (max-width: 640px) {
+            *{cursor: initial;}
+         }
+        .customCursor{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 10000;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
+            background-size: cover;
+            background-position: center;
+            background-image: url('/cursor.svg')
+        }
+
+        .cursorBeeg{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width:10%;
+            height:10%;
+            border-radius: 100px;
+            background: #f5930B
+
+        }
+    </style>
 
 	</style>
 </head>
 @extends('app')
 <body>
+        <div src="/cursor.svg" class="customCursor hidden xl:block">
+            <div class="cursorBeeg"></div>
+        </div>
 
 	<nav class="h-20 5xl:h-40 flex w-full justify-between items-center px-8 2xl:px-12 text-white fixed top-0 font-degular z-50" id="scrolling-active">
 		<div class="w-full ml-5 2xl:ml-0 2xl:w-auto flex justify-center 2xl:justify-start">
@@ -51,17 +82,17 @@
 		</div>
 		<div id="menu" class="hidden 2xl:flex gap-20 justify-center items-center">
 
-			<li class="home active magic-hover">
-				<a href="/#home" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
+			<li class="home active cursorHover">
+				<a href="/#home" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
 			</li>
-			<li class="about magic-hover">
-				<a href="/#about" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">About</a>
+			{{-- <li class="about  ">
+				<a href="/#about" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">About</a>
+			</li> --}}
+			<li class="gallery cursorHover ">
+				<a href="/#gallery" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
 			</li>
-			<li class="gallery magic-hover">
-				<a href="/#gallery" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
-			</li>
-			<li class="contacts magic-hover">
-					<a href="/#contacts" class="magic-hover 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
+			<li class="contacts cursorHover ">
+					<a href="/#contacts" class="  4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
 			</li>
 
 
@@ -78,7 +109,7 @@
             </button>
         </nav>
 
-        <div class="down magic-hover">
+        <div class="down cursorHover ">
         	<a href="#gallery" id="down"><img src="/assets/button/down.svg" class="hidden 3xl:block w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
         </div>
 
@@ -133,13 +164,21 @@
  		});
 
 	</script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
 
     const navLi = document.querySelectorAll("#menu li");
     var current = "";
-    window.onscroll = () => {
 
+    window.addEventListener('mousemove',e => {
+    document.querySelector('.customCursor').style.top = `${e.pageY}px`
+    document.querySelector('.customCursor').style.left = `${e.pageX}px`
+
+    })
+
+
+
+    window.onscroll = () => {
         document.querySelectorAll("section").forEach(section => {
             var sectionTop = section.offsetTop;
             if (window.scrollY >= sectionTop - 80) {
