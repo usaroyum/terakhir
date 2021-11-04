@@ -28,6 +28,10 @@
 		 	scroll-snap-align: start;
 		 }
 
+         @media (max-width: 640px) {
+            section{scroll-snap-align: none;}
+         }
+
 
 		#home{
 			background-image: url('/assets/image/hero.png');
@@ -171,7 +175,12 @@ h1.view:hover:after {
 }
 
 
-
+.aboutText{
+    float: left;
+    height: 5.4rem;
+    padding-top: 5px;
+    padding-right: 2rem
+}
 
 
 	</style>
@@ -196,9 +205,9 @@ h1.view:hover:after {
 	<section id="about" class="mt-10 3xl:mt-0 px-10 3xl:px-20 h-full 2xl:h-screen w-screen grid gap-5 2xl:gap-0 grid-cols-1 2xl:grid-cols-3 text-white items-center">
 
 		<div class="col-span-2">
-			<div class="grid gap-3">
-				<p class="font-base 4xl:text-2xl 5xl:text-5xl">About Stray</p>
-				<p class="font-base text-3xl 2xl:text-5xl 4xl:text-7xl 5xl:text-9xl"><span class="font-black text-yellow-500">STRAY</span> IS A CONCEPT ART <br> OUTSOURCING STUDIO THAT <br> STRIVES TO FIND <span class="font-semibold">INNOVATE</span> <br> <span class="font-semibold">SOLUTIONS</span> THROUGH <br> EXCELLENT <span class="font-semibold">ARTISTRY &</span> <br> <span class="font-semibold">CRAFTSMANSHIP.</span></p>
+			<div class="gap-3">
+				<div class="aboutText font-base 4xl:text-2xl 5xl:text-5xl">About Stray</div>
+				<div class="font-base text-3xl 2xl:text-5xl 4xl:text-7xl 5xl:text-9xl"><span class="font-black text-yellow-500">STRAY</span><br> IS A CONCEPT ART <br> OUTSOURCING STUDIO THAT <br> STRIVES TO FIND <span class="font-semibold">INNOVATE</span> <br> <span class="font-semibold">SOLUTIONS</span> THROUGH <br> EXCELLENT <span class="font-semibold">ARTISTRY &</span> <br> <span class="font-semibold">CRAFTSMANSHIP.</span></div>
 			</div>
 		</div>
 		<div class="flex justify-between 2xl:grid gap-y-9 justify-center">
