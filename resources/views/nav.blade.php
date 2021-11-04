@@ -5,10 +5,6 @@
 
 	<style>
 
-        *{
-            cursor: none;
-
-        }
 		html{
 			scroll-behavior: smooth;
 			scroll-snap-type: y mandatory;
@@ -40,10 +36,35 @@
             background: #f5930B;
         }
 
+        *{
+            cursor: none;
+        }
+        @media (max-width: 640px) {
+            *{cursor: initial;}
+         }
+        .customCursor{
+            width: 40px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            pointer-events: none
+        }
+        .cursorContainer{
+            position: fixed;
+            z-index: 10000;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
 	</style>
 </head>
 @extends('app')
 <body>
+    <div class="cursorContainer">
+        <img src="/cursor.svg" class="customCursor hidden xl:block">
+    </div>
 
 	<nav class="h-20 5xl:h-40 flex w-full justify-between items-center px-8 2xl:px-12 text-white fixed top-0 font-degular z-50" id="scrolling-active">
 		<div class="w-full ml-5 2xl:ml-0 2xl:w-auto flex justify-center 2xl:justify-start">
@@ -51,17 +72,17 @@
 		</div>
 		<div id="menu" class="hidden 2xl:flex gap-20 justify-center items-center">
 
-			<li class="home active magic-hover">
-				<a href="/#home" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
+			<li class="home active  ">
+				<a href="/#home" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
 			</li>
-			<li class="about magic-hover">
-				<a href="/#about" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">About</a>
+			{{-- <li class="about  ">
+				<a href="/#about" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">About</a>
+			</li> --}}
+			<li class="gallery  ">
+				<a href="/#gallery" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
 			</li>
-			<li class="gallery magic-hover">
-				<a href="/#gallery" class="magic-hover text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
-			</li>
-			<li class="contacts magic-hover">
-					<a href="/#contacts" class="magic-hover 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
+			<li class="contacts  ">
+					<a href="/#contacts" class="  4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
 			</li>
 
 
@@ -78,7 +99,7 @@
             </button>
         </nav>
 
-        <div class="down magic-hover">
+        <div class="down  ">
         	<a href="#gallery" id="down"><img src="/assets/button/down.svg" class="hidden 3xl:block w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
         </div>
 
@@ -138,8 +159,15 @@
 
     const navLi = document.querySelectorAll("#menu li");
     var current = "";
-    window.onscroll = () => {
 
+    window.addEventListener('mousemove',e => {
+    document.querySelector('.customCursor').style.top = `${e.clientY}px`
+    document.querySelector('.customCursor').style.left = `${e.pageX}px`
+
+    })
+
+
+    window.onscroll = () => {
         document.querySelectorAll("section").forEach(section => {
             var sectionTop = section.offsetTop;
             if (window.scrollY >= sectionTop - 80) {

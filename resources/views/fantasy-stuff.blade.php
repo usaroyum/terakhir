@@ -82,11 +82,11 @@
 			<div class="col-span-3 xl:col-span-1 grid gap-3">
 				<p class="text-white font-extralight">Other <br> Projects</p>
 				<div class="grid text-white text-4xl">
-				<a onmouseover="changeImage()" data-image-id='longexile' href="/long-exile" class="link magic-hover">LONG EXILE</a>
-				<a onmouseover="changeImage()" data-image-id='leviathan' href="/leviathan" class="link magic-hover">LEVIATHAN</a>
-				<a onmouseover="changeImage()" data-image-id='akkord' href="/akkord" class="link magic-hover">AKKORD</a>
-				<a onmouseover="changeImage()" data-image-id='godkiller' href="/godkiller" class="link magic-hover">GODKILLER</a>
-				<a onmouseover="changeImage()" data-image-id='fallenangel' href="/fallen-angel" class="link magic-hover">FALLEN ANGEL</a>
+				<a onmouseover="changeImage()" data-image-id='longexile' href="/long-exile" class="link  ">LONG EXILE</a>
+				<a onmouseover="changeImage()" data-image-id='leviathan' href="/leviathan" class="link  ">LEVIATHAN</a>
+				<a onmouseover="changeImage()" data-image-id='akkord' href="/akkord" class="link  ">AKKORD</a>
+				<a onmouseover="changeImage()" data-image-id='godkiller' href="/godkiller" class="link  ">GODKILLER</a>
+				<a onmouseover="changeImage()" data-image-id='fallenangel' href="/fallen-angel" class="link  ">FALLEN ANGEL</a>
 				</div>
 			</div>
 			<div id="image-hover" class="col-span-3 h-52 xl:h-full xl:col-span-2 bg-blend-hard-light bg-yellow-500 "></div>
