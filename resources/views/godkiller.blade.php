@@ -66,7 +66,7 @@
 		<div class="flex justify-between items-center">
 			<p class="text-4xl font-light text-white">GODKILLER</p>
 			<div class="flex gap-2 items-center">
-				<button><img src="/assets/button/all-net.svg" id="all-btn" class="w-4"></button><span class="text-white text-lg">|</span><button><img id="grid-btn" src="/assets/button/gallery.svg" class="btn-gallery w-4 fill-current"></button>
+				<button><img src="/assets/button/all-net.svg" id="all-btn" class="w-4 cursorHover" ></button><span class="text-white text-lg">|</span><button><img id="grid-btn" src="/assets/button/gallery.svg" class="btn-gallery w-4 fill-current"></button>
 			</div>
 		</div>
 		<div>
@@ -82,11 +82,11 @@
 			<div class="col-span-3 xl:col-span-1 grid gap-3">
 				<p class="text-white font-extralight">Other <br> Projects</p>
 				<div class="grid text-white text-4xl">
-				<a onmouseover="changeImage()" data-image-id='longexile' href="/long-exile" class="link  ">LONG EXILE</a>
-				<a onmouseover="changeImage()" data-image-id='leviathan' href="/leviathan" class="link  ">LEVIATHAN</a>
-				<a onmouseover="changeImage()" data-image-id='akkord' href="/akkord" class="link  ">AKKORD</a>
-				<a onmouseover="changeImage()" data-image-id='demon' href="" class="link  ">DAEMON</a>
-				<a onmouseover="changeImage()" data-image-id='fallenangel' href="/fallen-angel" class="link  ">FALLEN ANGEL</a>
+				<a onmouseover="changeImage()" data-image-id='longexile' href="/long-exile"  class="link cursorHover  ">LONG EXILE</a>
+				<a onmouseover="changeImage()" data-image-id='leviathan' href="/leviathan"  class="link cursorHover  ">LEVIATHAN</a>
+				<a onmouseover="changeImage()" data-image-id='akkord' href="/akkord"  class="link cursorHover  ">AKKORD</a>
+				<a onmouseover="changeImage()" data-image-id='demon' href=""  class="link cursorHover  ">DAEMON</a>
+				<a onmouseover="changeImage()" data-image-id='fallenangel' href="/fallen-angel"  class="link cursorHover  ">FALLEN ANGEL</a>
 				</div>
 			</div>
 			<div id="image-hover" class="col-span-3 h-52 xl:h-full xl:col-span-2 bg-blend-hard-light bg-yellow-500 "></div>

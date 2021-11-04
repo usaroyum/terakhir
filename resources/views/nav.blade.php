@@ -31,7 +31,7 @@
             bottom: -2px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
+            width: 120%;
             height: 2px;
             background: #f5930B;
         }
@@ -44,17 +44,27 @@
          }
         .customCursor{
             width: 40px;
+            height: 40px;
             position: absolute;
-            transform: translate(-50%,-50%);
-            pointer-events: none
-        }
-        .cursorContainer{
-            position: fixed;
             z-index: 10000;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
+            background-size: cover;
+            background-position: center;
+            background-image: url('/cursor.svg')
+        }
+
+        .cursorBeeg{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width:10%;
+            height:10%;
+            border-radius: 100px;
+            background: #f5930B
+
         }
     </style>
 
@@ -62,9 +72,9 @@
 </head>
 @extends('app')
 <body>
-    <div class="cursorContainer">
-        <img src="/cursor.svg" class="customCursor hidden xl:block">
-    </div>
+        <div src="/cursor.svg" class="customCursor hidden xl:block">
+            <div class="cursorBeeg"></div>
+        </div>
 
 	<nav class="h-20 5xl:h-40 flex w-full justify-between items-center px-8 2xl:px-12 text-white fixed top-0 font-degular z-50" id="scrolling-active">
 		<div class="w-full ml-5 2xl:ml-0 2xl:w-auto flex justify-center 2xl:justify-start">
@@ -72,16 +82,16 @@
 		</div>
 		<div id="menu" class="hidden 2xl:flex gap-20 justify-center items-center">
 
-			<li class="home active  ">
+			<li class="home active cursorHover">
 				<a href="/#home" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Home</a>
 			</li>
 			{{-- <li class="about  ">
 				<a href="/#about" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">About</a>
 			</li> --}}
-			<li class="gallery  ">
+			<li class="gallery cursorHover ">
 				<a href="/#gallery" class="  text-base 4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Gallery</a>
 			</li>
-			<li class="contacts  ">
+			<li class="contacts cursorHover ">
 					<a href="/#contacts" class="  4xl:text-xl 5xl:text-4xl hover:text-yellow-400">Contacts</a>
 			</li>
 
@@ -99,7 +109,7 @@
             </button>
         </nav>
 
-        <div class="down  ">
+        <div class="down cursorHover ">
         	<a href="#gallery" id="down"><img src="/assets/button/down.svg" class="hidden 3xl:block w-16 4xl:w-20 5xl:w-32 fill-current bg-white hover:bg-yellow-800 rounded-full"></a>
         </div>
 
@@ -154,17 +164,18 @@
  		});
 
 	</script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
 
     const navLi = document.querySelectorAll("#menu li");
     var current = "";
 
     window.addEventListener('mousemove',e => {
-    document.querySelector('.customCursor').style.top = `${e.clientY}px`
+    document.querySelector('.customCursor').style.top = `${e.pageY}px`
     document.querySelector('.customCursor').style.left = `${e.pageX}px`
 
     })
+
 
 
     window.onscroll = () => {
